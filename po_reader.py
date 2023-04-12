@@ -18,7 +18,8 @@ from google.cloud import storage
 
 
 # Set the path to your service account credentials file
-creds_path = st.secrets["credentials"]
+creds_path = 'https://www.dropbox.com/s/ukkafo8d5dkb2xh/credentials.json?dl=1'
+
 
 # Build the credentials object from your service account credentials file
 creds = service_account.Credentials.from_service_account_file(creds_path)
