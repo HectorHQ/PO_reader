@@ -17,7 +17,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 
 # Set the path to your service account credentials file
-creds_path = 'credentials.json'
+creds_path = st.secrets["credentials"]
 
 # Build the credentials object from your service account credentials file
 creds = service_account.Credentials.from_service_account_file(creds_path)
@@ -118,4 +118,11 @@ if file_uploaded is not None:
         write_gs_PO()
     show_table()
 
+
+st.markdown('---')
+left_col,center_col,right_col = st.columns(3)
+
+with center_col:
+    st.title('**Powered by HQ**')
+    st.image('https://www.dropbox.com/s/twrl9exjs8piv7t/Headquarters%20transparent%20light%20logo.png?dl=1')
 
