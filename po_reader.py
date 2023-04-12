@@ -14,6 +14,7 @@ from PyPDF2 import PdfReader
 
 import gspread as gs
 from oauth2client.service_account import ServiceAccountCredentials
+from google.cloud import storage
 
 
 # Set the path to your service account credentials file
