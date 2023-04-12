@@ -20,9 +20,9 @@ from google.cloud import storage
 # Set the path to your service account credentials file
 creds_path = 'https://www.dropbox.com/s/ukkafo8d5dkb2xh/credentials.json?dl=0'
 
-
 # Build the credentials object from your service account credentials file
-creds = service_account.Credentials.from_service_account_file(creds_path)
+creds = creds_path = service_account.Credentials.from_service_account_info(st.secrets["credentials"],
+                                                                           scopes=["https://www.googleapis.com/auth/spreadsheets",],)
 
 # Scopes links used to connect the script to the Google Drive and Google sheets
 scope = ['https://www.googleapis.com/auth/drive',
@@ -30,6 +30,7 @@ scope = ['https://www.googleapis.com/auth/drive',
 
 # Creating the credentials variable to connect to the API
 credentials = ServiceAccountCredentials.from_json_keyfile_name(creds_path,scope)
+
 
 st.title("**PO Medmen Reader**")
 
@@ -79,7 +80,7 @@ def write_gs_PO():
     df_gpd = df.pivot(index='PO Number',columns='Description',values='Amount').reset_index()
     
     # Authenticate and authorize access to Google Sheets API
-    client = gs.authorize(credentials=credentials)
+    client = gs.authorize(credentials=creds)
 
     spreadsheet_name = ' MEDMEN METRC FILE'
     sheet_name = 'PO'
