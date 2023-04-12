@@ -106,7 +106,7 @@ def write_gs_PO():
 
 def show_table():
     # Authenticate and authorize access to Google Sheets API
-    client = gs.authorize(credentials=credentials)
+    client = gs.authorize(credentials=creds)
 
     spreadsheet_name = ' MEDMEN METRC FILE'
     sheet_name = 'PO'
