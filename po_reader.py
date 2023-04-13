@@ -21,7 +21,7 @@ from google.cloud import storage
 #creds_path = 'https://www.dropbox.com/s/ukkafo8d5dkb2xh/credentials.json?dl=0'
 
 # Build the credentials object from your service account credentials file
-creds = creds_path = service_account.Credentials.from_service_account_info(st.secrets["credentials"],
+creds = service_account.Credentials.from_service_account_info(st.secrets["credentials"],
                                                                            scopes=["https://www.googleapis.com/auth/spreadsheets",],)
 
 # Scopes links used to connect the script to the Google Drive and Google sheets
