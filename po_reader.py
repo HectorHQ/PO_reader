@@ -118,6 +118,6 @@ st.markdown('---')
 left_col,center_col,right_col = st.columns(3)
 
 with center_col:
-    st.title('**Powered by HQ**')
+    st.title('**Powered by**')
     st.image('https://www.dropbox.com/s/twrl9exjs8piv7t/Headquarters%20transparent%20light%20logo.png?dl=1')
 
